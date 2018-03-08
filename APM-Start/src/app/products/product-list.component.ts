@@ -9,6 +9,8 @@ import {ProductService} from './product.service';
 })
 
 export class ProductListComponent implements OnInit{
+
+  errorMessage: string;
   filteredProducts: IProduct[];
   imageWidth: number = 50;
   imageMargin: number = 2;
@@ -31,7 +33,14 @@ export class ProductListComponent implements OnInit{
 
   ngOnInit(): void {
     console.log('In OnInit');
-    this.products = this._productService.getProducts();
+
+    this._productService.getProducts()
+      .subscribe(products => {
+          this.products = products;
+          this.filteredProducts = this.products;
+        },
+        error => this.errorMessage = <any>error);
+
     this.filteredProducts = this.products;
   }
 
