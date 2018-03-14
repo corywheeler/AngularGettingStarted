@@ -1,3 +1,5 @@
+# This is a copy of my final code after having done the Angular: Getting Started course on Pluralsight with Deborah Kurata
+
 # Angular-Getting Started
 Materials for the ["Angular: Getting Started"](http://bit.ly/Angular-GettingStarted) course on Pluralsight.
 
